@@ -17,6 +17,10 @@ Threads can be created by using two mechanisms :
 
 - Common use cases for multi-threading include parallelizing computational tasks, managing user interfaces, and handling concurrent I/O operations.
 
+This is the correct option. In Java, the join() method is used to hold the execution of the currently running thread until the specified thread has 
+finished executing. When a thread calls join() on another thread, it waits for that thread to complete before resuming its own execution. 
+This allows for synchronization between threads and ensures that certain operations are completed in a specific order.
+
 # Use Case Comparison:
 - Multi-Threading: Ideal for CPU-bound tasks that can be parallelized, such as image processing, video encoding, or mathematical computations, 
   as well as scenarios requiring responsive user interfaces.
