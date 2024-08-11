@@ -11,14 +11,10 @@
   while object-oriented programming is about creating objects that contain both data and methods.
 
 # Concepts of OOP
-- Class
-- Object
-- Method
-- 4 main pillars (Encapsulation, Inheritance, Abstraction, Polymorphism). 
-  Others:- Association, Composition, Dependency Injection(DI)
-
 - Class:- the blueprint for individual objects, attributes and methods.
 - Object:- instances of a class created with specifically defined data.
            correspond to real-world objects or an abstract entity.
-- Methods:- are functions that objects can perform.
-            describe the behaviors of an object.
+- Method:- are functions that objects can perform.
+           describe the behaviors of an object.
+- 4 main pillars (Encapsulation, Inheritance, Abstraction, Polymorphism). 
+  Others:- Association, Composition, Dependency Injection(DI)
