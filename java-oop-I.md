@@ -19,12 +19,13 @@
 - 4 main pillars (Encapsulation, Inheritance, Abstraction, Polymorphism). 
   Others:- Association, Composition, Dependency Injection(DI)
 
-# PRINCIPLES OF OOP
+# Principles of  OOP
 * OOP allows objects to interact with each other using four basic principles: encapsulation, inheritance, polymorphism, and abstraction.
 
 1. Encapsulation
 - Encapsulation is the mechanism of hiding of data implementation by restricting access to public methods. 
-  Instance variables are kept private and accessor methods are made public to achieve this. i.e. hiding the name and dob attributes of person in a class.
+  Instance variables are kept private and accessor methods are made public to achieve this. 
+  i.e. hiding the name and dob attributes of person in a class.
 - Encapsulation — private instance variable and public accessor methods.
 
    `public class Employee {
@@ -43,3 +44,5 @@
        this.dob = dob;
        }`
    }
+- 
+2. Abstraction
