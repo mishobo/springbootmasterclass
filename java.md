@@ -1,6 +1,6 @@
 # Object Programming (OOP) - JAVA
 
-- Java is a popular programming language, created in 1995.
+- Java is a popular programming language, created in 1995 by James Gosling.
 - Currently owned by Oracle.
 
 # OOP - Object Oriented Programming
@@ -18,3 +18,28 @@
            describe the behaviors of an object.
 - 4 main pillars (Encapsulation, Inheritance, Abstraction, Polymorphism). 
   Others:- Association, Composition, Dependency Injection(DI)
+
+# PRINCIPLES OF OOP
+* OOP allows objects to interact with each other using four basic principles: encapsulation, inheritance, polymorphism, and abstraction.
+
+1. Encapsulation
+- Encapsulation is the mechanism of hiding of data implementation by restricting access to public methods. 
+  Instance variables are kept private and accessor methods are made public to achieve this. i.e. hiding the name and dob attributes of person in a class.
+- Encapsulation — private instance variable and public accessor methods.
+
+   `public class Employee {
+       private String name;
+       private Date dob;
+       public String getName() {
+         return name;
+       }
+       public void setName(String name) {
+       this.name = name;
+       }
+       public Date getDob() {
+       return dob;
+       }
+       public void setDob(Date dob) {
+       this.dob = dob;
+       }`
+   }
