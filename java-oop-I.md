@@ -60,3 +60,10 @@
 - It is further of two types — static and dynamic.
 - Static polymorphism is achieved using method overloading and dynamic polymorphism using method overriding.
 - It is closely related to inheritance. We can write a code that works on the superclass, and it will work with any subclass type as well.
+
+5. Association
+- Association represents a relationship between two or more objects. 
+- It can be a one-to-one, one-to-many, or many-to-many relationship.
+- Associations are typically established through instance variables or method parameters.
+
+6. Composition
