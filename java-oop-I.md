@@ -67,3 +67,8 @@
 - Associations are typically established through instance variables or method parameters.
 
 6. Composition
+- Composition is a strong form of association where the lifetime of the associated objects is dependent on the container object.
+- In composition, the container object owns and manages the associated objects.
+- If the container object is destroyed, the associated objects are also destroyed.
+
+7. Dependency Injection
