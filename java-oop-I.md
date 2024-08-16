@@ -72,3 +72,26 @@
 - If the container object is destroyed, the associated objects are also destroyed.
 
 7. Dependency Injection
+- Dependency Injection (DI) is a design pattern that allows the creation of loosely coupled objects. 
+- It involves injecting dependencies into a class rather than creating them within the class itself.
+- DI promotes modular and testable code by decoupling the implementation details from the dependencies
+  Example:
+  `class Logger {
+      public void log(String message) {
+      System.out.println("Logging: " + message);
+      }
+  } 
+  class UserService {
+  private Logger logger;
+  public UserService(Logger logger) {
+  this.logger = logger;
+    }
+  public void createUser(String username, String password) {
+  // Create user logic
+  logger.log("User created: " + username);
+   }
+  }
+  Logger logger = new Logger();
+  UserService userService = new UserService(logger);
+  userService.createUser("john.doe", "password");
+  // Output: Logging: User created: john.doe`
