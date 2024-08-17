@@ -64,7 +64,29 @@
 5. Association
 - Association represents a relationship between two or more objects. 
 - It can be a one-to-one, one-to-many, or many-to-many relationship.
-- Associations are typically established through instance variables or method parameters.
+- Associations are typically established through instance variables or method parameters. 
+- Association manages one-to-one, one-to-many, and many-to-many relationships.
+
+examples of association
+1. A person can have only one passport. It defines the one-to-one.
+2. A College can have many students. It defines the one-to-many.
+3. A state can have several cities, and those cities are related to that single state. It defines the many-to-one
+4. A single student can associate with multiple teachers, and multiple students can also be associated with a single teacher. 
+   Both are created or deleted independently, so it defines the many-to-many.
+
+# Types of Association
+- In Java there are 2 types of association:
+1. "is-a" association
+    - also referred to as Inheritance
+2. "has-a" association
+    * Aggregation
+      - defines the HAS-A relationship.
+      - follows the one-to-one or one-way relationship.
+      - If two entities are in the aggregation composition, and one entity fails due to some error, it will not affect the other entity.
+      - example:- (Let's take the example of a toy and its battery. The battery belongs to a toy, and if the toy breaks and deletes from our database, 
+                  the battery will still remaining in our database, and it may still be working. So in Aggregation, 
+                  objects always have their own lifecycles when the ownership exists there.)
+    * Composition
 
 6. Composition
 - Composition is a strong form of association where the lifetime of the associated objects is dependent on the container object.
@@ -95,3 +117,4 @@
   UserService userService = new UserService(logger);
   userService.createUser("john.doe", "password");
   // Output: Logging: User created: john.doe`
+
