@@ -1,3 +1,6 @@
+
+# Servlet and JSP
+
 - JavaServer Pages (JSP) and Servlets play a crucial role in creating robust and interactive web applications. 
 - Servlets, at their core, are Java classes that extend the capabilities of servers to enhance the functionality of web applications.
 - They provide a server-side component model that is both platform-independent and scalable. 
