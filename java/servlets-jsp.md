@@ -147,7 +147,8 @@ throws ServletException, IOException {
 - A JSP page combines HTML and Java code to create dynamic content. 
 - The Java code in JSP is enclosed within <% %> tags.
 
-`<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+```
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -161,4 +162,5 @@ throws ServletException, IOException {
         out.println("Hello, " + name);
     %>
 </body>
-</html>`
+</html>
+```
