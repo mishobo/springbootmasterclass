@@ -139,4 +139,26 @@ throws ServletException, IOException {
     }
 }`
 
-``
+# Understanding JavaServer Pages (JSP)
+- hey are an integral part of the Java EE (Enterprise Edition) technology, enabling developers to embed Java code within HTML pages. 
+  JSP pages are ultimately translated into servlets by the web container during runtime.
+
+# The Anatomy of a JSP Page
+- A JSP page combines HTML and Java code to create dynamic content. 
+- The Java code in JSP is enclosed within <% %> tags.
+
+`<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My First JSP Page</title>
+</head>
+<body>
+    <h1>Welcome to JSP!</h1>
+    <% 
+        String name = "Guest";
+        out.println("Hello, " + name);
+    %>
+</body>
+</html>`
