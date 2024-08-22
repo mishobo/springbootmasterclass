@@ -181,3 +181,5 @@ throws ServletException, IOException {
 </body>
 </html>
 ```
+explanation
+- The page’s language is declared as Java, set the character encoding, and then use Java code to dynamically generate content within the HTML structure.
