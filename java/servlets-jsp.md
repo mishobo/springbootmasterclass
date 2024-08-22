@@ -181,5 +181,19 @@ throws ServletException, IOException {
 </body>
 </html>
 ```
-explanation
+### explanation
 - The page’s language is declared as Java, set the character encoding, and then use Java code to dynamically generate content within the HTML structure.
+- JSP directives provide additional information to the container during the translation phase.
+- Another useful directive is <%@ include %>, which allows including external files in the JSP page.
+- JSP actions are special tags that encapsulate dynamic behavior, enhancing code modularity.
+- For instance, the <jsp:useBean> action simplifies JavaBean integration into JSP pages.
+
+```<jsp:useBean id="user" class="com.example.User" scope="session" />```
+
+- This action creates a session-scoped JavaBean named “user.”
+
+- Expression Language, or EL, simplifies the retrieval of data from Java objects.
+- It provides an elegant way to access object properties without using scriptlets.
+
+````<p>Welcome, ${user.name}!</p>````
+- Here, EL fetches the “name” property from the “user” JavaBean.
