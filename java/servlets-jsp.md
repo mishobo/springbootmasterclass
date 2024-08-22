@@ -8,27 +8,32 @@
 
 # Example
 
-`@WebServlet("/HelloServlet")
+```
+@WebServlet("/HelloServlet")
 public class HelloServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.getWriter().println("Hello, Servlets!");
     }
-}`
+}
+```
 
 - The class HelloServlet that extends HttpServlet.
 - The doGet method handles HTTP GET requests, and it simply writes "Hello, Servlets!" to the response.
 
 # Mapping Servlets in the Deployment Descriptor (web.xml)
 - For Servlets to be accessible, they need to be mapped in the web.xml deployment descriptor.
- `<servlet>
+
+``` 
+<servlet>
     <servlet-name>HelloServlet</servlet-name>
     <servlet-class>com.example.HelloServlet</servlet-class>
 </servlet>
 <servlet-mapping>
     <servlet-name>HelloServlet</servlet-name>
     <url-pattern>/HelloServlet</url-pattern>
-</servlet-mapping>`
+</servlet-mapping>
+```
 
 - This XML configuration informs the servlet container about the servlet’s name, class, and URL pattern.
 
@@ -37,7 +42,8 @@ public class HelloServlet extends HttpServlet {
 -  The init method is called during initialization, service method handles requests, 
    and destroy method is called before the servlet is taken out of service.
 
-`@Override
+```
+@Override
 public void init() throws ServletException {
 // Initialization logic
 }
@@ -49,26 +55,29 @@ throws ServletException, IOException {
 @Override
 public void destroy() {
 // Cleanup logic
-}`
+}
+```
 
 # Servlets and Form Handling
 
-`<!-- index.html -->
+```
+<!-- index.html -->
 <form action="/FormServlet" method="post">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" required>
     <br>
     <input type="submit" value="Submit">
-</form>`
+</form>
 
-`@WebServlet("/FormServlet")
+@WebServlet("/FormServlet")
 public class FormServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String name = request.getParameter("name");
         response.getWriter().printf("Hello, %s!", name);
     }
-}`
+}
+```
 
 # Understanding RESTful API
 - REST (Representational State Transfer) is an architectural style that uses a stateless, client-server communication model.
@@ -84,7 +93,8 @@ public class FormServlet extends HttpServlet {
 
 # Building a Simple RESTful API with Servlets
 1. doGet Method:
-`@WebServlet("/example")
+```
+@WebServlet("/example")
 public class MyServlet extends HttpServlet {
 protected void doGet(HttpServletRequest request, HttpServletResponse response)
 throws ServletException, IOException {
@@ -92,14 +102,16 @@ throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         out.println("Hello, this is a GET request response!");
     }
-}`
+}
+```
 - Description: Handles HTTP GET requests.
 - Use Case: Ideal for retrieving information from the server. Parameters are appended to the URL.
 - 
 2. doPost Method:
 - Description: Handles HTTP POST requests.
 - Use Case: Used for submitting data to be processed to a specified resource. Commonly used for form submissions.
-`@WebServlet("/example")
+```
+@WebServlet("/example")
 public class MyServlet extends HttpServlet {
 protected void doPost(HttpServletRequest request, HttpServletResponse response)
 throws ServletException, IOException {
@@ -109,12 +121,14 @@ throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         out.println("Received data: " + data);
     }
-}`
+}
+```
 
 3. doPut Method:
 - Description: Handles HTTP PUT requests.
 - Use Case: Typically used for updating a resource on the server. The entire representation of the resource is sent in the request.
-`@WebServlet("/example")
+```
+@WebServlet("/example")
 public class MyServlet extends HttpServlet {
 protected void doPut(HttpServletRequest request, HttpServletResponse response)
 throws ServletException, IOException {
@@ -123,12 +137,14 @@ throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         out.println("Resource updated successfully!");
     }
-}`
+}
+```
 
 4. doDelete Method:
 - Description: Handles HTTP DELETE requests.
 - Use Case: Used to request that a resource be removed. Can delete a specified resource on the server.
-`@WebServlet("/example")
+```
+@WebServlet("/example")
 public class MyServlet extends HttpServlet {
 protected void doDelete(HttpServletRequest request, HttpServletResponse response)
 throws ServletException, IOException {
@@ -137,7 +153,8 @@ throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         out.println("Resource deleted successfully!");
     }
-}`
+}
+```
 
 # Understanding JavaServer Pages (JSP)
 - hey are an integral part of the Java EE (Enterprise Edition) technology, enabling developers to embed Java code within HTML pages. 
