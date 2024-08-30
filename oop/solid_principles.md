@@ -57,3 +57,8 @@ public class BookPrinter {
 }
 ````
 
+###  Open for Extension, Closed for Modification
+
+_classes should be open for extension but closed for modification. In doing so, 
+we stop ourselves from modifying existing code and causing potential new bugs in an otherwise happy application._
+
