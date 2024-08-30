@@ -14,4 +14,46 @@ SOLID stands for:
 ### Single-Responsibility Principle
 
 Single-responsibility Principle (SRP) states:
-- **a class should only have one responsibility. Furthermore, it should only have one reason to change.**
+*a class should only have one responsibility. Furthermore, it should only have one reason to change.*
+
+How does this principle help us to build better software?
+1. Testing – A class with one responsibility will have far fewer test cases.
+2. Lower coupling – Less functionality in a single class will have fewer dependencies.
+3. Organization – Smaller, well-organized classes are easier to search than monolithic ones.
+
+### Example
+
+``` 
+public class Book {
+
+    private String name;
+    private String author;
+    private String text;
+
+    //constructor, getters and setters
+
+    // methods that directly relate to the book properties
+    public String replaceWordInText(String word, String replacementWord){
+        return text.replaceAll(word, replacementWord);
+    }
+
+    public boolean isWordInText(String word){
+        return text.contains(word);
+    }
+}
+```
+
+```` 
+public class BookPrinter {
+
+    // methods for outputting text
+    void printTextToConsole(String text){
+        //our code for formatting and printing the text
+    }
+
+    void printTextToAnotherMedium(String text){
+        // code for writing to any other location..
+    }
+}
+````
+
