@@ -62,3 +62,25 @@ public class BookPrinter {
 _classes should be open for extension but closed for modification. In doing so, 
 we stop ourselves from modifying existing code and causing potential new bugs in an otherwise happy application._
 
+Of course, the one exception to the rule is when fixing bugs in existing code.
+
+``` 
+public class Guitar {
+
+    private String make;
+    private String model;
+    private int volume;
+
+    //Constructors, getters & setters
+}
+```
+
+``` 
+public class SuperCoolGuitarWithFlames extends Guitar {
+
+    private String flameColor;
+    
+    //constructor, getters + setters
+}
+```
+
