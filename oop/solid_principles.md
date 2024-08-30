@@ -14,4 +14,4 @@ SOLID stands for:
 ### Single-Responsibility Principle
 
 Single-responsibility Principle (SRP) states:
-- *A class should have one and only one reason to change, meaning that a class should have only one job.*
+- **a class should only have one responsibility. Furthermore, it should only have one reason to change.**
