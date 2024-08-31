@@ -143,6 +143,53 @@ we can ensure that implementing classes only need to be concerned about the meth
 
 ### Dependency Injection
 
+_that larger interfaces should be split into smaller ones. By doing so, 
+we can ensure that implementing classes only need to be concerned about the methods that are of interest to them._
 
+```java
+public class Windows98Machine {
 
+    private final StandardKeyboard keyboard;
+    private final Monitor monitor;
+
+    public Windows98Machine() {
+        monitor = new Monitor();
+        keyboard = new StandardKeyboard();
+    }
+}
+```
+
+By declaring the StandardKeyboard and Monitor with the new keyword, we’ve tightly coupled these three classes together.
+Not only does this make our Windows98Computer hard to test, 
+but we’ve also lost the ability to switch out our StandardKeyboard class with a different one should the need arise. 
+And we’re stuck with our Monitor class too.
+
+Let’s decouple our machine from the StandardKeyboard by adding a more general Keyboard interface and using this in our class:
+
+```java
+public interface Keyboard { }
+```
+
+```java
+public class Windows98Machine{
+
+    private final Keyboard keyboard;
+    private final Monitor monitor;
+
+    public Windows98Machine(Keyboard keyboard, Monitor monitor) {
+        this.keyboard = keyboard;
+        this.monitor = monitor;
+    }
+}
+```
+
+Here, we’re using the dependency injection pattern to facilitate adding the Keyboard dependency into the Windows98Machine class.
+
+```java
+public class StandardKeyboard implements Keyboard { }
+```
+
+Now our classes are decoupled and communicate through the Keyboard abstraction.
+If we want, we can easily switch out the type of keyboard in our machine with a different implementation of the interface.
+We can follow the same principle for the Monitor class.
 
