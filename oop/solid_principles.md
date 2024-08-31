@@ -23,7 +23,7 @@ How does this principle help us to build better software?
 
 ### Example
 
-``` 
+```java
 public class Book {
 
     private String name;
@@ -43,7 +43,7 @@ public class Book {
 }
 ```
 
-```` 
+````java
 public class BookPrinter {
 
     // methods for outputting text
@@ -64,7 +64,7 @@ we stop ourselves from modifying existing code and causing potential new bugs in
 
 Of course, the one exception to the rule is when fixing bugs in existing code.
 
-``` 
+``` java
 public class Guitar {
 
     private String make;
@@ -75,7 +75,7 @@ public class Guitar {
 }
 ```
 
-``` 
+```java
 public class SuperCoolGuitarWithFlames extends Guitar {
 
     private String flameColor;
@@ -89,7 +89,7 @@ public class SuperCoolGuitarWithFlames extends Guitar {
 _if class A is a subtype of class B, we should be able to replace B with A without disrupting the behavior of our program._
 
 ### Explanation
-``` 
+```java
 public interface Car {
 
     void turnOnEngine();
@@ -97,7 +97,7 @@ public interface Car {
 }
 ```
 
-```
+```java
 public class MotorCar implements Car {
 
     private Engine engine;
@@ -119,7 +119,7 @@ public class MotorCar implements Car {
 As our code describes, we have an engine that we can turn on, and we can increase the power.
 But wait — we are now living in the era of electric cars:
 
-```
+```java
 public class ElectricCar implements Car {
 
     public void turnOnEngine() {
