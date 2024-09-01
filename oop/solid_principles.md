@@ -2,8 +2,14 @@
 ## Introduction
 
 SOLID is an acronym for the first five object-oriented design (OOD) principles by Robert C. Martin (also known as Uncle Bob).
+These concepts were later built upon by Michael Feathers, who introduced us to the SOLID acronym.
+
+### Reasons for SOLID PRINCIPLES
 These principles establish practices for developing software with considerations for maintaining and extending it as the project grows. 
 Adopting these practices can also help avoid code smells, refactor code, and develop Agile or Adaptive software.
+Simply put, Martin and Feathers’ design principles encourage us to create more maintainable, understandable, and flexible software.
+Consequently, as our applications grow in size, we can reduce their complexity and save ourselves a lot of headaches further down the road!
+
 SOLID stands for:
   * S - Single-responsibility Principle 
   * O - Open-closed Principle
