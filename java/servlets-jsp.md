@@ -1,4 +1,3 @@
-
 # Servlet and JSP
 
 - JavaServer Pages (JSP) and Servlets play a crucial role in creating robust and interactive web applications. 
