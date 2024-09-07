@@ -80,5 +80,5 @@ Decorator design pattern is one of the structural design pattern (such as Adapte
 and uses abstract classes or interface with composition to implement.
 
 #### references 
-1. [java design patterns by Pankaj and Bradley Kouchi] (https://www.digitalocean.com/community/tutorials/java-design-patterns-example-tutorial)
+1. [java design patterns by Pankaj and Bradley Kouchi](https://www.digitalocean.com/community/tutorials/java-design-patterns-example-tutorial)
 
