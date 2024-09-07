@@ -43,3 +43,42 @@ Creational design patterns provide solutions to instantiate an Object in the bes
    and you have a similar Object already existing. So this pattern provides a mechanism to copy the original Object to a new Object and then modify it according to our needs. 
    This pattern uses Java cloning to copy the Object. The prototype design pattern mandates that the Object which you are copying should provide the copying feature. 
    It should not be done by any other class. However, whether to use the shallow or deep copy of the object properties depends on the requirements and is a design decision.
+
+### Structural Design Patterns 
+
+Structural design patterns provide different ways to create a Class structure (for example, using inheritance and composition to create a large Object from small Objects).
+
+- Adapter pattern
+The adapter design pattern is one of the structural design patterns and is used so that two unrelated interfaces can work together. 
+The object that joins these unrelated interfaces is called an adapter.
+
+- Composite Pattern
+The composite pattern is used when we have to represent a part-whole hierarchy. 
+When we need to create a structure in a way that the objects in the structure have to be treated the same way, we can apply the composite design pattern.
+
+- Proxy Pattern
+The proxy pattern provides a placeholder for another Object to control access to it. This pattern is used when we want to provide controlled access to functionality.
+
+- Flyweight Pattern
+The flyweight design pattern is used when we need to create a lot of Objects of a Class. 
+Since every Object consumes memory space that can be crucial for low-memory devices (such as mobile devices or embedded systems), 
+the flyweight design pattern can be applied to reduce the load on memory by sharing Objects.
+String pool implementation in Java is one of the best examples of flyweight pattern implementation.
+
+- Facade Pattern
+The facade pattern is used to help client applications easily interact with the system.
+
+- Bridge Pattern
+When we have interface hierarchies in both interfaces as well as implementations, 
+then the bridge design pattern is used to decouple the interfaces from the implementation and to hide the implementation details from the client programs.
+The implementation of the bridge design pattern follows the notion of preferring composition over inheritance.
+
+- Decorator Pattern
+Decorator design pattern is used to modify the functionality of an object at runtime.
+At the same time other instances of the same class will not be affected by this, so individual object gets the modified behavior
+Decorator design pattern is one of the structural design pattern (such as Adapter Pattern, Bridge Pattern, Composite Pattern) 
+and uses abstract classes or interface with composition to implement.
+
+#### references 
+1. java design patterns by Pankaj and Bradley Kouchi (https://www.digitalocean.com/community/tutorials/java-design-patterns-example-tutorial)
+
