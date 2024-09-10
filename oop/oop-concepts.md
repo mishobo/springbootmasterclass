@@ -45,10 +45,19 @@
        }`
    }
 
-    
 2. Abstraction
 - Abstract means a concept or an Idea which is not associated with any particular instance.
 - Using abstract class/Interface we express the intent of the class rather than the actual implementation.
+- Abstraction is a key concept in object-oriented programming (OOP) that involves hiding unnecessary information and displaying only what's necessary.
+  Simplifies interaction
+  Abstraction makes it easier to use objects by hiding complex implementation details and only showing the necessary features
+- Reduces complexity
+  Abstraction helps reduce complexity for the average user.
+- Supports polymorphism
+  Abstraction supports polymorphism, a strategy that allows one type to be substituted for another in the same or similar role.
+- Used to solve design problems
+  Abstraction is mainly used to solve problems at the design level, especially the conceptual part.
+
 
 3. Inheritance
 - In derived classes we can reuse the code of existing super classes.
