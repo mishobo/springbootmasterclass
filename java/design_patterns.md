@@ -114,6 +114,50 @@ Behavioral patterns provide a solution for better interaction between objects an
    A strategy pattern is also known as a policy pattern. We define multiple algorithms and let client applications pass the algorithm to be used as a parameter.
    One of the best examples of this pattern is the Collections.sort() method that takes the Comparator parameter. 
    Based on the different implementations of comparator interfaces, the objects are getting sorted in different ways.
+   Strategy Pattern is very similar to State Pattern.One of the difference is that Context contains state as instance variable and 
+   there can be multiple tasks whose implementation can be dependent on the state whereas in strategy pattern strategy is 
+   passed as argument to the method and context object doesn’t have any variable to store it.
+   Strategy pattern is useful when we have multiple algorithms for specific task and we want our application to be flexible to chose any of the algorithm at runtime for specific task.
+6. Command Pattern
+   The command pattern is used to implement loose-coupling in a request-response model. 
+   In this pattern, the request is sent to the invoker and the invoker passes it to the encapsulated command object. 
+   The command object passes the request to the appropriate method of receiver to perform the specific action.
+7. State Pattern
+   The state design pattern is used when an Object changes its behavior based on its internal state. 
+   If we have to change the behavior of an Object based on its state, we can have a state variable in the Object and 
+   use if-else condition block to perform different actions based on the state. 
+   The state pattern is used to provide a systematic and loosely-coupled way to achieve this through context and state implementations.
+8. Visitor Pattern
+   The visitor pattern is used when we have to perform an operation on a group of similar kinds of objects. 
+   With the help of a visitor pattern, we can move the operational logic from the objects to another class.
+9. Interpreter Pattern
+   The interpreter pattern is used to define a grammatical representation of a language and provides an interpreter to deal with this grammar.
+10. Iterator Pattern
+    The iterator pattern is one of the behavioral patterns and is used to provide a standard way to traverse through a group of objects. 
+    The iterator pattern is widely used in Java Collection Framework where the iterator interface provides methods for traversing through a Collection. 
+    This pattern is also used to provide different kinds of iterators based on our requirements. 
+    The iterator pattern hides the actual implementation of traversal through the Collection and client programs use iterator methods.
+11. Memento Pattern
+    The memento design pattern is used when we want to save the state of an object so that we can restore it later on. 
+    This pattern is used to implement this in such a way that the saved state data of the object is not accessible outside of the Object, 
+    this protects the integrity of saved state data.
+    Memento pattern is implemented with two Objects – originator and caretaker. 
+    The originator is the Object whose state needs to be saved and restored, and it uses an inner class to save the state of Object. 
+    The inner class is called “Memento”, and it’s private so that it can’t be accessed from other objects.
+
+### Miscellaneous Design Patterns
+1. DAO Design Pattern
+   The Data Access Object (DAO) design pattern is used to decouple the data persistence logic to a separate layer.
+   DAO is a very popular pattern when we design systems to work with databases.
+   The idea is to keep the service layer separate from the data access layer.
+   This way we implement the separation of logic in our application.
+2. Dependency Injection Pattern
+   The dependency injection pattern allows us to remove the hard-coded dependencies and make our application loosely-coupled, 
+   extendable, and maintainable. We can implement dependency injection in Java to move the dependency resolution from compile-time to runtime. 
+   Spring framework is built on the principle of dependency injection.
+3. MVC Pattern
+   Model-View-Controller (MVC) Pattern is one of the oldest architectural patterns for creating web applications.
+
 
 #### references 
 1. [java design patterns by Pankaj and Bradley Kouchi](https://www.digitalocean.com/community/tutorials/java-design-patterns-example-tutorial)
