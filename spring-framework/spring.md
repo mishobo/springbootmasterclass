@@ -89,3 +89,34 @@
 - This module derives its feature from the org.springframework.beans package and also supports functionalities such as 
   internationalization (I18N), validation, event propagation, and resource loading.
 - The Application context implements MessageSource interface and provides the messaging functionality to an application.
+
+
+### Spring Framework Architecture
+- Its architecture is designed around two core principles: Dependency Injection (DI) and Aspect Oriented Programming (AOP)
+- The Spring framework consists of several modules, which can be categorized into four main areas: 
+  * Core Container
+  * Data Access/Integration
+  * Web
+  * Miscellaneous
+
+- The Core Container provides the fundamental functionality of the Spring framework, including the IoC container and ApplicationContext.
+- The Data Access/Integration area provides support for integrating with databases and other data sources.
+- The Web area provides support for building web applications, including the Spring MVC and Spring WebFlux modules.
+- The Miscellaneous area includes other modules that provide additional functionality, such as the Spring Security module for authentication 
+  and authorization features.
+
+### Dependency Injection (DI)
+- Is a design pattern that helps to reduce the coupling between the components of an application.
+- By using DI, the Spring framework enables loose coupling between components, making the application more modular and easier to maintain.
+- The Spring framework provides an Inversion of Control (IoC) container, which is responsible for creating and managing instances of JavaBeans, 
+  and the ApplicationContext, which provides a unified view of the entire application configuration.
+
+### Aspect-Oriented Programming (AOP)
+- Allows developers to modularize cross-cutting concerns, such as logging, security, and transaction management, 
+  and apply them to multiple components of an application. 
+- This results in a more modular and reusable codebase.
+- Additionally, the Spring framework’s flexible configuration model allows developers to configure the application using various approaches, 
+  such as XML-based configuration, Java-based configuration, and annotation-based configuration.
+
+
+![img.png](img.png)
