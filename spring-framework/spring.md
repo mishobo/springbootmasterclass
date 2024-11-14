@@ -119,4 +119,4 @@
   such as XML-based configuration, Java-based configuration, and annotation-based configuration.
 
 
-![img.png](img.png)
+![img.png](img.png){width=300 height=200}
