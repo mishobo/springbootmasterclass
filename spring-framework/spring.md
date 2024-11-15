@@ -118,5 +118,84 @@
 - Additionally, the Spring framework’s flexible configuration model allows developers to configure the application using various approaches, 
   such as XML-based configuration, Java-based configuration, and annotation-based configuration.
 
+![img.png](img.png)
 
-![img.png](img.png){width=300 height=200}
+### Core Container
+
+The Core Container provides the fundamental functionality of the Spring framework, 
+including the Inversion of Control (IoC) container and the ApplicationContext.
+
+### Data Access/Integration
+
+- The Data Access/Integration area provides support for integrating with databases and other data sources. 
+  It includes the following modules:
+  * Spring JDBC:- This module provides a simple JDBC abstraction layer that reduces the amount of boilerplate code required to work with JDBC. 
+    Spring JDBC provides support for transaction management, allowing developers to manage database transactions declaratively 
+    using Spring’s transaction management.
+
+  * Spring ORM:
+    This module provides integration with Object-Relational Mapping (ORM) frameworks, such as Hibernate and JPA. 
+    Spring ORM provides a higher-level abstraction layer on top of ORM frameworks, allowing developers to write less boilerplate code 
+    and more easily integrate ORM technologies with other Spring features, such as transaction management and caching.
+
+  * Spring Data:
+    This module provides a consistent and easy-to-use programming model for working with data access technologies, 
+    including databases, NoSQL, and cloud-based data services.
+    Spring Data provides a wide range of features, including automatic CRUD (Create, Read, Update, Delete) operations, 
+    query generation from method names, support for pagination and sorting, integration with Spring’s transaction management, and more.
+    Additionally, Spring Data provides support for common data access patterns, such as repositories and data access objects (DAOs).
+
+  * Spring Transaction:
+    This module provides support for declarative transaction management in Spring applications.
+    Spring Transaction provides support for various transaction propagation and isolation levels, 
+    allowing developers to manage transactions at different levels of granularity.
+    Additionally, Spring Transaction provides support for different transaction management strategies, 
+    such as using a JTA transaction manager or a simple JDBC transaction manager.
+
+### Web
+
+- The Web area provides support for building web applications. It includes the following modules:
+* Spring MVC:
+  Spring MVC provides a range of features, including support for handling HTTP requests and responses, form handling, data binding, validation, and more.
+  It also provides support for different view technologies, such as JSP (JavaServer Pages), Thymeleaf, and Velocity, 
+  allowing developers to choose the view technology that best suits their needs.
+
+* Spring WebFlux:
+  This module provides a reactive programming model for building web applications that require high concurrency and scalability.
+  Spring WebFlux provides support for building reactive web applications using a range of technologies, such as Netty, Undertow, and Servlet 3.1+ containers.
+  It also provides a range of features, including support for reactive data access, reactive stream processing, and reactive HTTP clients.
+
+* Spring Web Services:
+  This module provides support for building SOAP-based and RESTful web services.
+  Spring Web Services provides support for generating WSDL (Web Services Description Language) from Java classes, and for generating Java classes from WSDL.
+  This allows developers to define the contract (i.e., the interface) of their web service using WSDL, 
+  and to generate the Java classes that implement the web service from the WSDL.
+
+### Miscellaneous
+
+- The Miscellaneous area includes other modules that provide additional functionality, such as:
+
+* Spring Security:
+  This module provides authentication and authorization features for Spring applications. 
+  Spring Security provides a range of authorization mechanisms, such as role-based access control and expression-based access control. 
+  It also provides support for securing different parts of the application using different security configurations, 
+  allowing developers to apply fine-grained security policies.
+
+* Spring Integration:
+  This module provides support for building message-driven and event-driven architectures.
+  Spring Integration provides a range of integration patterns, such as messaging, routing, and transformation.
+  It provides support for a range of messaging systems, such as JMS, AMQP, and Apache Kafka.
+  It also provides support for integrating with different protocols, such as FTP, HTTP, and TCP.
+
+* Spring Batch:
+  This module provides support for batch processing and integration with enterprise systems.
+  Spring Batch provides a range of tools and utilities for building and managing batch processing applications, 
+  such as support for testing and debugging batch jobs, logging and monitoring, and integration with other Spring modules, 
+  such as Spring Data and Spring Integration.
+
+* Spring Cloud:
+  This module provides support for building cloud-native applications using Spring technologies.
+  Spring Cloud provides a range of features for building cloud-native applications, such as service discovery, 
+  configuration management, and load balancing.
+  It provides support for integrating with different cloud platforms, such as AWS and GCP, and for using different cloud-native technologies, 
+  such as containers and serverless computing.
