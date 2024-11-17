@@ -126,3 +126,113 @@ public class DemoController {
 	} 
 }
 ```
+### Type 3: Spring Boot Annotations
+Spring annotations present in the org.springframework.boot.autoconfigure 
+and org.springframework.boot.autoconfigure.condition packages are commonly known as Spring Boot annotations.
+
+* @SpringBootApplication
+* @EnableAutoConfiguration
+* Auto-Configuration Conditions
+  - @ConditionalOnClass, and @ConditionalOnMissingClass
+  - @ConditionalOnBean, and @ConditionalOnMissingBean
+  - @ConditionalOnProperty
+  - @ConditionalOnResource
+  - @ConditionalOnWebApplication and @ConditionalOnNotWebApplication
+  - @ConditionalExpression
+  - @Conditional
+
+#### @SpringBootApplication
+This annotation is used to mark the main class of a Spring Boot application.
+It encapsulates @Configuration, @EnableAutoConfiguration, and @ComponentScan annotations with their default attributes.
+
+```java
+@SpringBootApplication
+// Class 
+public class DemoApplication {
+	// Main driver method 
+	public static void main(String[] args) {
+		SpringApplication.run(DemoApplication.class, args); 
+	} 
+}
+```
+
+### Type 4: Spring Scheduling Annotations
+- @EnableAsync
+- @EnableScheduling
+- @Async
+- @Scheduled
+- @Schedules
+
+#### @EnableAsync
+This annotation is used to enable asynchronous functionality in Spring.
+```java
+@Configuration
+@EnableAsync
+class Config {}
+```
+
+### Type 5: Spring Data Annotations
+Spring Data provides an abstraction over data storage technologies.
+Hence the business logic code can be much more independent of the underlying persistence implementation.
+- Common Spring Data Annotations
+  * @Transactional
+  * @NoRepositoryBean
+  * @Param
+  * @Id
+  * @Transient
+  * @CreatedBy, @LastModifiedBy, @CreatedDate, @LastModifiedDate
+- Spring Data JPA Annotations
+  * @Query
+  * @Procedure
+  * @Lock
+  * @Modifying
+  * @EnableJpaRepositories
+- Spring Data Mongo Annotations
+  * @Document
+  * @Field
+  * @Query
+  * @EnableMongoRepositories
+
+### @Transactional
+When there is a need to configure the transactional behavior of a method, we can do it with @Transactional annotation. 
+```java
+@Transactional
+void payment() {}
+```
+
+### @Id
+@Id marks a field in a model class as the primary key.
+Since it’s implementation-independent, it makes a model class easy to use with multiple data store engines.
+
+```java
+class Student {
+    @Id
+    Long id;
+}
+```
+
+### Type 6: Spring Bean Annotations
+There’re several ways to configure beans in a Spring container.
+You can declare them using XML configuration or you can declare beans using the @Bean annotation in a configuration class 
+or you can mark the class with one of the annotations from the org.springframework.stereotype package and leave the rest to component scanning.
+Some of the annotations that are available in this category are:
+- @ComponentScan
+- @Configuration
+- Stereotype Annotations
+  * @Component
+  * @Service
+  * @Repository
+  * @Controller
+
+These annotations are used to create Spring beans automatically in the application context.
+@Component annotation is the main Stereotype Annotation.
+
+1: @Service: We specify a class with @Service to indicate that they’re holding the business logic. 
+   Besides being used in the service layer, there isn’t any other special use for this annotation. 
+   The utility classes can be marked as Service classes.
+
+2: @Repository: We specify a class with @Repository to indicate that they’re dealing with CRUD operations, 
+   usually, it’s used with DAO (Data Access Object) or Repository implementations that deal with database tables.
+
+3: @Controller: We specify a class with @Controller to indicate that they’re front controllers and 
+   responsible to handle user requests and return the appropriate response. It is mostly used with REST Web Services.
