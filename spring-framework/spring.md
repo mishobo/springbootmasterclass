@@ -5,6 +5,8 @@
 - Key features include Spring MVC for web development, Spring Boot for rapid application setup, 
   and Spring Security for robust authentication and authorization. 
 - The spring contains several modules like IOC, AOP, DAO, Context, WEB MVC, etc.
+- This framework uses various new techniques such as Aspect-Oriented Programming (AOP), Plain Old Java Object (POJO), 
+  and dependency injection (DI), to develop enterprise applications.
 
 ### Features of the Spring Framework
 1. Inversion of Control (IoC) container
@@ -110,6 +112,21 @@
 - By using DI, the Spring framework enables loose coupling between components, making the application more modular and easier to maintain.
 - The Spring framework provides an Inversion of Control (IoC) container, which is responsible for creating and managing instances of JavaBeans, 
   and the ApplicationContext, which provides a unified view of the entire application configuration.
+- Spring IoC (Inversion of Control) Container is the core of Spring Framework.
+- It creates the objects, configures and assembles their dependencies, manages their entire life cycle.
+- The Container uses Dependency Injection(DI) to manage the components that make up the application.
+- It gets the information about the objects from a configuration file(XML) or Java Code or Java Annotations and Java POJO class.
+- These objects are called Beans.
+- Since the Controlling of Java objects and their lifecycle is not done by the developers, hence the name Inversion Of Control.
+- There are 2 types of IoC containers:
+ * BeanFactory
+ * ApplicationContext
+
+- main features for spring IoC: 
+ * Creating Object for us
+ * Managing our objects,
+ * Helping our application to be configurable
+ * Managing dependencies
 
 ### Aspect-Oriented Programming (AOP)
 - Allows developers to modularize cross-cutting concerns, such as logging, security, and transaction management, 
@@ -121,12 +138,10 @@
 ![img.png](img.png)
 
 ### Core Container
-
 The Core Container provides the fundamental functionality of the Spring framework, 
 including the Inversion of Control (IoC) container and the ApplicationContext.
 
 ### Data Access/Integration
-
 - The Data Access/Integration area provides support for integrating with databases and other data sources. 
   It includes the following modules:
   * Spring JDBC:- This module provides a simple JDBC abstraction layer that reduces the amount of boilerplate code required to work with JDBC. 
@@ -153,7 +168,6 @@ including the Inversion of Control (IoC) container and the ApplicationContext.
     such as using a JTA transaction manager or a simple JDBC transaction manager.
 
 ### Web
-
 - The Web area provides support for building web applications. It includes the following modules:
 * Spring MVC:
   Spring MVC provides a range of features, including support for handling HTTP requests and responses, form handling, data binding, validation, and more.
@@ -172,7 +186,6 @@ including the Inversion of Control (IoC) container and the ApplicationContext.
   and to generate the Java classes that implement the web service from the WSDL.
 
 ### Miscellaneous
-
 - The Miscellaneous area includes other modules that provide additional functionality, such as:
 
 * Spring Security:
@@ -199,3 +212,102 @@ including the Inversion of Control (IoC) container and the ApplicationContext.
   configuration management, and load balancing.
   It provides support for integrating with different cloud platforms, such as AWS and GCP, and for using different cloud-native technologies, 
   such as containers and serverless computing.
+
+### Spring – BeanFactory
+- Beans are Java objects that are configured at run-time by Spring IoC Container.
+- BeanFactory represents a basic IoC container which is a parent interface of ApplicationContext.
+- BeanFactory uses Beans and their dependencies metadata to create and configure them at run-time.
+- BeanFactory loads the bean definitions and dependency amongst the beans based on a configuration file (XML) or 
+  the beans can be directly returned when required using Java Configuration. 
+- There are other types of configuration files like LDAP, RDMS, properties files, etc.
+- BeanFactory does not support Annotation-based configuration whereas ApplicationContext does.
+
+### Spring – ApplicationContext
+- ApplicationContext belongs to the Spring framework.
+- Spring IoC container is responsible for instantiating, wiring, configuring, and managing the entire life cycle of beans or objects.
+- BeanFactory and ApplicationContext represent the Spring IoC Containers.
+- ApplicationContext is the sub-interface of BeanFactory.
+- It is used when we are creating an enterprise-level application or web application.
+- ApplicationContext is the superset of BeanFactory, whatever features provided by BeanFactory are also provided by ApplicationContext.
+
+ApplicationContext Features
+1. Publishing events to registered listeners by resolving property files.
+2. Methods for accessing application components.
+3. Supports Internationalization.
+4. Loading File resources in a generic fashion.
+
+ApplicationContext Implementation Classes
+1. AnnotationConfigApplicationContext container
+2. AnnotationConfigWebApplicationContext
+3. XmlWebApplicationContext
+4. FileSystemXmlApplicationContext
+5. ClassPathXmlApplicationContext
+
+### AnnotationConfigApplicationContext
+- AnnotationConfigApplicationContext class was introduced in Spring 3.0.
+- It accepts classes annotated with @Configuration, @Component, and JSR-330 compliant classes.
+- The constructor of AnnotationConfigApplicationContext accepts one or more classes.
+```java
+ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class, AppConfig1.class);
+```
+
+### AnnotationConfigWebApplicationContext
+- This class may be used when we configure ContextLoaderListener servlet listener or a DispatcherServlet in a web.xml. 
+- From Spring 3.1, this class can be instantiated and injected to DispatcherServlet using java code by implementing WebApplicationInitializer, 
+  an alternative to web.xml.
+
+```java
+// Class
+// Implementing WebApplicationInitializer
+public class MyWebApplicationInitializer implements WebApplicationInitializer {
+
+  // Servlet container
+
+  public void onStartup(ServletContext container) throws ServletException {
+    AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
+    context.register(AppConfig.class);
+    context.setServletContext(container);
+
+    // Servlet configuration
+  }
+}
+```
+
+### XmlWebApplicationContext
+- Spring MVC Web-based application can be configured completely using XML or Java code. 
+- Configuring this container is similar to the AnnotationConfigWebApplicationContext container, 
+  which implies we can configure it in web.xml or using java code.
+
+```java
+// Class
+// Implementing WebApplicationInitializer
+public class MyXmlWebApplicationInitializer implements WebApplicationInitializer {
+
+  // Servlet container
+  public void onStartup(ServletContext container) throws ServletException {
+    XmlWebApplicationContext context = new XmlWebApplicationContext();
+    context.setConfigLocation("/WEB-INF/spring/applicationContext.xml");
+    context.setServletContext(container);
+
+    // Servlet configuration
+  }
+}
+```
+
+### FileSystemXmlApplicationContext
+- FileSystemXmlApplicationContext is used to load XML-based Spring Configuration files from the file system or from URL.
+- We can get the application context using Java code.
+
+```java
+String path = "Documents/demoProject/src/main/resources/applicationcontext/student-bean-config.xml";
+
+ApplicationContext context = new FileSystemXmlApplicationContext(path);
+AccountService accountService = context.getBean("studentService", StudentService.class);
+```
+
+### ClassPathXmlApplicationContext
+- FileSystemXmlApplicationContext is used to load XML-based Spring Configuration files from the classpath. 
+```java
+ApplicationContext context = new ClassPathXmlApplicationContext("applicationcontext/student-bean-config.xml");
+StudentService studentService = context.getBean("studentService", StudentService.class);
+```
