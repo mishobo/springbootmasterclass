@@ -73,6 +73,11 @@ class Student {
 }
 ```
 
+#### @Value
+@Value annotation which is used to assign default values to variables and method arguments.
+
+
+
 ### Context Configuration Annotations
 @Profile: If you want Spring to use a @Component class or a @Bean method only when a specific profile is active 
 then you can mark it with @Profile.
@@ -236,3 +241,10 @@ These annotations are used to create Spring beans automatically in the applicati
 
 3: @Controller: We specify a class with @Controller to indicate that they’re front controllers and 
    responsible to handle user requests and return the appropriate response. It is mostly used with REST Web Services.
+
+
+#### @Repository
+@Repository Annotation is a specialization of @Component annotation which is used to indicate that the class provides 
+the mechanism for storage, retrieval, update, delete and search operation on objects.
+This annotation is a general-purpose stereotype annotation which very close to the DAO pattern where DAO classes are 
+responsible for providing CRUD operations on database tables. 
