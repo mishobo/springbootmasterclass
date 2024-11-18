@@ -65,3 +65,23 @@ Hence  JPA features like Lazy Loading, caching of entities, etc. are omitted. Be
 | The parameterized constructor will be helpful.                                                                                                                             | The parameterized constructor may not be helpful.                                                                               |
 | There is no specific annotation is required. The only thing is we should have equal attributes match with the DB table and each attribute should have a getter and setter. | @Table, @ID, and @Column annotations are helpful to mention for direct connection with the database.                            |
 | Data Access Layer is specified with the interface and its implementation.                                                                                                  | Data Access Layer is simple and it omits lazy loading, cache implementation, etc., which is there in JPA(Java Persistence API). |
+
+### Exception Handling
+Exception handling in Spring Boot helps to deal with errors and exceptions present in APIs, delivering a robust enterprise application.
+- Here are some key approaches to exception handling in Spring Boot:
+1. Default exception handling by Spring Boot
+2. Using @ExceptionHandler annotation
+3. Using @ControllerAdvice for global exception handling
+
+Spring Boot provides a systematic error response to the user with information such as timestamp, HTTP status code, error, message, and the path.
+
+Using @ExceptionHandler Annotation
+* @ExceptionHandler annotation provided by Spring Boot can be used to handle exceptions in particular Handler classes or Handler methods.
+* Any method annotated with this is automatically recognized by Spring Configuration as an Exception Handler Method.
+* An Exception Handler method handles all exceptions and their subclasses passed in the argument.
+* It can also be configured to return a specific error response to the user.
+The @ExceptionHandler annotated method can only handle exceptions thrown by that particular class.
+
+
+### Using @ControllerAdvice for Global Exception Handling
+if we want to handle any exception thrown throughout the application, we can define a global exception handler class and annotate it with @ControllerAdvice
