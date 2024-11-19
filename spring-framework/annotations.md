@@ -104,6 +104,10 @@ Some of the annotations that are available in this category are:
 * @ModelAttribute
 * @CrossOrigin
 
+### @RequestParam
+@RequestParam annotation enables spring to extract input data that may be passed as a query, f
+orm data, or any arbitrary custom data.
+
 #### @Controller
 It can be applied to classes only.
 It’s used to mark a class as a web request handler.

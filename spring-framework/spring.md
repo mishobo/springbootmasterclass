@@ -311,3 +311,25 @@ AccountService accountService = context.getBean("studentService", StudentService
 ApplicationContext context = new ClassPathXmlApplicationContext("applicationcontext/student-bean-config.xml");
 StudentService studentService = context.getBean("studentService", StudentService.class);
 ```
+
+
+### Spring MVC
+Spring MVC Framework follows the Model-View-Controller architectural design pattern which works around the Front Controller 
+i.e. the Dispatcher Servlet.
+The Dispatcher Servlet handles and dispatches all the incoming HTTP requests to the appropriate controller.
+It uses @Controller and @RequestMapping as default request handlers.
+The @Controller annotation defines that a particular class is a controller.
+@RequestMapping annotation maps web requests to Spring Controller methods. The terms model, view, and controller are as follows:
+
+* Model: The Model encapsulates the application data.
+* View: View renders the model data and generates HTML output that the client’s browser can interpret.
+* Controller: The Controller processes the user requests and passes them to the view for rendering.
+
+### Dispatcher Servlet
+Dispatcher Servlet is the front controller that manages the entire HTTP request and response handling process.
+
+### Spring MVC Framework works as follows:
+- All the incoming requests are intercepted by the DispatcherServlet that works as the front controller.
+- The DispatcherServlet then gets an entry of handler mapping from the XML file and forwards the request to the controller.
+- The object of ModelAndView is returned by the controller.
+- The DispatcherServlet checks the entry of the view resolver in the XML file and invokes the appropriate view component.

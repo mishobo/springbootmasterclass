@@ -17,11 +17,11 @@ public class CustomerController {
     }
 
     // Exception Handler method added in CustomerController to handle CustomerAlreadyExistsException
-    @ExceptionHandler(value = CustomerAlreadyExistsException.class)
-    @ResponseStatus(HttpStatus.CONFLICT)
-    public ErrorResponse handleCustomerAlreadyExistsException(CustomerAlreadyExistsException ex) {
-        return new ErrorResponse(HttpStatus.CONFLICT.value(), ex.getMessage());
-    }
+//    @ExceptionHandler(value = CustomerAlreadyExistsException.class)
+//    @ResponseStatus(HttpStatus.CONFLICT)
+//    public ErrorResponse handleCustomerAlreadyExistsException(CustomerAlreadyExistsException ex) {
+//        return new ErrorResponse(HttpStatus.CONFLICT.value(), ex.getMessage());
+//    }
 
     @GetMapping("/getCustomer/{id}")
     public Customer getCustomer(@PathVariable("id") Long id) {

@@ -27,8 +27,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public String addCustomer(Customer customer) {
-        Customer existingCustomer
-                = customerRepository.findById(customer.getId())
+        Customer existingCustomer = customerRepository.findById(customer.getId())
                 .orElse(null);
         if (existingCustomer == null) {
             customerRepository.save(customer);
