@@ -3,6 +3,7 @@ package com.husseinabdallah.SpringBootMasterClass.controller;
 import com.husseinabdallah.SpringBootMasterClass.entity.Customer;
 import com.husseinabdallah.SpringBootMasterClass.exception.CustomerAlreadyExistsException;
 import com.husseinabdallah.SpringBootMasterClass.exception.ErrorResponse;
+import com.husseinabdallah.SpringBootMasterClass.model.CustomerDto;
 import com.husseinabdallah.SpringBootMasterClass.service.CustomerService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -23,18 +24,18 @@ public class CustomerController {
 //        return new ErrorResponse(HttpStatus.CONFLICT.value(), ex.getMessage());
 //    }
 
-    @GetMapping("/getCustomer/{id}")
+    @GetMapping(value = "/getCustomer/{id}", produces = "application/json")
     public Customer getCustomer(@PathVariable("id") Long id) {
         return customerService.getCustomer(id);
     }
 
     @PostMapping("/addCustomer")
-    public String addCustomer(@RequestBody Customer customer) {
+    public String addCustomer(@RequestBody CustomerDto customer) {
         return customerService.addCustomer(customer);
     }
 
     @PutMapping("/updateCustomer")
-    public String updateCustomer(@RequestBody Customer customer) {
+    public String updateCustomer(@RequestBody CustomerDto customer) {
         return customerService.updateCustomer(customer);
     }
 

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
-//
+
 //    @ExceptionHandler(value = NoSuchCustomerExistsException.class)
 //    @ResponseStatus(HttpStatus.NOT_FOUND)
 //    public @ResponseBody ErrorResponse handleException(NoSuchCustomerExistsException ex) {

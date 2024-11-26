@@ -1,6 +1,7 @@
 package com.husseinabdallah.SpringBootMasterClass.service;
 
 import com.husseinabdallah.SpringBootMasterClass.entity.Customer;
+import com.husseinabdallah.SpringBootMasterClass.model.CustomerDto;
 
 public interface CustomerService {
 
@@ -9,8 +10,8 @@ public interface CustomerService {
 
     // Method to add a new Customer
     // into the database
-    String addCustomer(Customer customer);
+    String addCustomer(CustomerDto customer);
 
     // Method to update details of a Customer
-    String updateCustomer(Customer customer);
+    String updateCustomer(CustomerDto customer);
 }

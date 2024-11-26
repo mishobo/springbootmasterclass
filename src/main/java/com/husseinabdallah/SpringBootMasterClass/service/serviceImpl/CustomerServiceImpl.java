@@ -3,6 +3,7 @@ package com.husseinabdallah.SpringBootMasterClass.service.serviceImpl;
 import com.husseinabdallah.SpringBootMasterClass.entity.Customer;
 import com.husseinabdallah.SpringBootMasterClass.exception.CustomerAlreadyExistsException;
 import com.husseinabdallah.SpringBootMasterClass.exception.NoSuchCustomerExistsException;
+import com.husseinabdallah.SpringBootMasterClass.model.CustomerDto;
 import com.husseinabdallah.SpringBootMasterClass.repository.CustomerRepository;
 import com.husseinabdallah.SpringBootMasterClass.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,16 +22,18 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Customer getCustomer(Long id) {
-        return customerRepository.findById(id).orElseThrow(
-                () -> new NoSuchCustomerExistsException("NO CUSTOMER PRESENT WITH ID = " + id));
+        System.out.println("customerRepository = " + customerRepository.findCustomerById(id));
+        return customerRepository.findCustomerById(id);
     }
 
     @Override
-    public String addCustomer(Customer customer) {
-        Customer existingCustomer = customerRepository.findById(customer.getId())
-                .orElse(null);
+    public String addCustomer(CustomerDto customer) {
+        Customer existingCustomer = customerRepository.findCustomerById(customer.id());
+
         if (existingCustomer == null) {
-            customerRepository.save(customer);
+            Customer newCustomer = new Customer();
+
+            customerRepository.save(newCustomer);
             return "Customer added successfully";
         }
         else
@@ -39,16 +42,17 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public String updateCustomer(Customer customer) {
-        Customer existingCustomer = customerRepository.findById(customer.getId()).orElse(null);
+    public String updateCustomer(CustomerDto customer) {
+        Customer existingCustomer = customerRepository.findCustomerById(customer.id());
 
+        System.out.println("existingCustomer = " + existingCustomer);
         if (existingCustomer == null)
             throw new NoSuchCustomerExistsException(
                     "No Such Customer exists!!");
         else {
-            existingCustomer.setName(customer.getName());
-            existingCustomer.setAddress(customer.getAddress());
-            customerRepository.save(existingCustomer);
+
+            Customer updatedCustomer = new Customer();
+            customerRepository.save(updatedCustomer);
             return "Record updated Successfully";
         }
     }

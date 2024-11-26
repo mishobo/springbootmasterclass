@@ -1,0 +1,17 @@
+# HIBERNATE
+Hibernate is a framework that provides some abstraction layer, meaning that the programmer does not have to worry about 
+the implementations, Hibernate does the implementations for you internally like Establishing a connection with the 
+database, writing queries to perform CRUD operations, etc.
+It is a java framework that is used to develop persistence logic.
+Persistence logic means storing and processing the data for long use.
+More precisely Hibernate is an open-source, non-invasive, lightweight java ORM(Object-relational mapping) framework to 
+develop objects which are independent of the database software and make independent persistence logic in all JAVA, JEE.
+
+## One-to-One Mapping
+One to one represents that a single entity is associated with a single instance of the other entity.
+In database management systems one-to-one mapping is of two types-
+1. One-to-one unidirectional
+2. One-to-one bidirectional
+
+### 1. One-to-one unidirectional
+

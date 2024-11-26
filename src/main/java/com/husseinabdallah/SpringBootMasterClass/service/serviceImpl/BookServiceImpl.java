@@ -21,7 +21,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Book findBookByID(long id) {
-        return bookList.stream().filter(b -> b.getId() == id).findAny().orElse(null);
+        return bookList.stream().filter(b -> b.id() == id).findAny().orElse(null);
     }
 
     @Override

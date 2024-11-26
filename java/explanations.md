@@ -1,0 +1,1 @@
+- immutable data types in java :- An object is immutable when its state doesn't change after it has been initialized. 

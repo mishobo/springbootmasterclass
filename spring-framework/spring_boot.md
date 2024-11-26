@@ -85,3 +85,76 @@ The @ExceptionHandler annotated method can only handle exceptions thrown by that
 
 ### Using @ControllerAdvice for Global Exception Handling
 if we want to handle any exception thrown throughout the application, we can define a global exception handler class and annotate it with @ControllerAdvice
+
+### Spring Boot – REST
+Rest stands for Representation State Transfer it is basically a convention to building HTTP services.
+So we use a simple HTTP protocol principle to provide support to CREATE, READ, UPDATE & DELETE data.
+Rest Controller returns Data, while Controller returns a View of ‘Model-View-Controller’ architecture.
+
+### Important Methods of HTTP
+GET: Reads an existing data.
+PUT: Updates existing data.
+POST: Creates new data.
+DELETE: Deletes the data.
+
+### HTTP Standard Status Codes
+200: Success
+201: Created
+401: Unauthorized
+404: Resource Not Found
+500: Server Error
+
+### Uses of Spring Boot – REST
+The web services are completely stateless.
+Web services that conform to the REST architectural style, called RESTful Web services, 
+provide interoperability between computer systems on the Internet. RESTful Web services allow the 
+requesting systems to access and manipulate textual representations of Web resources by using a uniform and 
+predefined set of stateless operations. Other kinds of Web services, such as SOAP Web services, 
+expose their own arbitrary sets of operations.
+
+### Principles of RESTful web services
+* Resource Identification through URI- A RESTful web service provides an independent URI/ global ID for every resource.
+* Uniform Interface- Resources are manipulated using a fixed set of four create, read, update, delete operations: PUT, GET, POST, and DELETE.
+* Self-descriptive messages- Resources and representations are decoupled in a RESTful web service. This allows us to represent the payload in various formats such as HTML, XML, plain text, PDF, JPEG, JSON, and others based on our use case.
+* Stateful Interaction through hyperlinks- Every interaction with a resource is stateless; that is, request messages are self-contained.
+
+### REST JSON Response
+JSON is an abbreviation for JavaScript Object Notation.
+It is a text-based data format following Javascript object syntax.
+It has syntax somewhat like a Javascript object literal and can be used independently from Javascript.
+Many programming environments have the ability to parse and generate JSON.
+REST APIs work like a client-server architecture.
+The client makes a request and a server (REST API) responds back by providing some kind of data.
+Data can be sent in various formats like plain text, XML, JSON, etc. Of these formats, JSON ( JavaScript Object Notation ) 
+is a standard for transporting data between web applications.
+
+Pre-requisites required are as follows: 
+1. JSON string can be stored in it own file with the ‘.json‘ extension.
+2. It has the MIME type of – ‘application/json‘.
+
+Spring framework’s ‘Starter Web’ dependency provides you with the two essential features of Spring MVC – (Spring’s web framework)  
+and the RESTful ( REST API ) methodology.
+
+### REST XML Response
+Data types that REST API can return are as follows:    
+1. JSON (JavaScript Object Notation)
+2. XML
+3. HTML
+4. XLT
+5. Python
+6. PHP
+7. Plain text
+
+### The advantages of XML are as follows: 
+1. It is an Extensible markup language that uses tags for data definition.
+2. It supports namespaces.
+3. It supports comments.
+4. It supports various encoding.
+5. XML is more secure than JSON.
+
+- JSON is less secure because of the absence of a JSON parser in the browser.
+- JSONP is dangerous because it allows cross-origin exchanges of data.
+- When we create a Spring Boot project with ‘Starter Web’ dependency, we only get support for returning data in JSON format, 
+  with the help of the Jackson library.
+- To embed support for returning data in XML format we need third-party dependencies.
+- There are many libraries that support XML return format, for Example – Jackson, JAXB, etc.

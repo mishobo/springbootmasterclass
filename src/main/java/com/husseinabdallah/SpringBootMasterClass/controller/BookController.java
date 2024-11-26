@@ -10,7 +10,7 @@ import java.util.HashSet;
 @RequestMapping("/api/v1")
 public class BookController {
 
-    private BookService bookService;
+    private final BookService bookService;
 
     public BookController(BookService bookService) {
         this.bookService = bookService;
