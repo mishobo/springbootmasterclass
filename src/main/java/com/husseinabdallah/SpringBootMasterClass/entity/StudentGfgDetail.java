@@ -11,7 +11,7 @@ public class StudentGfgDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private Long id;
 
     @Column(name = "college")
     private String college;
@@ -19,11 +19,9 @@ public class StudentGfgDetail {
     @Column(name = "no_of_problems_solved")
     private int noOfProblemsSolved;
 
-    public StudentGfgDetail() {}
+//    @OneToOne(mappedBy = "studentGfgDetail")
+//    private StudentGfg studentGfg;
 
-    public StudentGfgDetail(String college, int noOfProblemsSolved) {
-        this.college = college;
-        this.noOfProblemsSolved = noOfProblemsSolved;
-    }
+    public StudentGfgDetail() {}
 
 }

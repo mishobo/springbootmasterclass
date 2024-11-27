@@ -33,10 +33,4 @@ public class StudentGfg {
 
     public StudentGfg() {}
 
-    public StudentGfg(String firstName, String lastName, String email, StudentGfgDetail studentGfgDetail) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.studentGfgDetail = studentGfgDetail;
-    }
 }
