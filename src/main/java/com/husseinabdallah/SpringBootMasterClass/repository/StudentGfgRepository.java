@@ -7,5 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface StudentGfgRepository extends JpaRepository<StudentGfg, Long> {
 
+    StudentGfg findByStudentId(Long studentId);
+
 
 }

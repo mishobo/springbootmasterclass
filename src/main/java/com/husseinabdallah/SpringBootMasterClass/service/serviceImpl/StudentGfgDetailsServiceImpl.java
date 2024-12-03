@@ -2,7 +2,7 @@ package com.husseinabdallah.SpringBootMasterClass.service.serviceImpl;
 
 import com.husseinabdallah.SpringBootMasterClass.entity.StudentGfgDetail;
 import com.husseinabdallah.SpringBootMasterClass.repository.StudentGfgDetailRepository;
-import com.husseinabdallah.SpringBootMasterClass.service.StudentGfgDetailService;
+import com.husseinabdallah.SpringBootMasterClass.service.interfaces.StudentGfgDetailService;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

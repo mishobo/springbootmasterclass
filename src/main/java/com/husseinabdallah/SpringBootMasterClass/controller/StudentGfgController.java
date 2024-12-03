@@ -3,9 +3,10 @@ package com.husseinabdallah.SpringBootMasterClass.controller;
 
 import com.husseinabdallah.SpringBootMasterClass.entity.StudentGfg;
 import com.husseinabdallah.SpringBootMasterClass.entity.StudentGfgDetail;
-import com.husseinabdallah.SpringBootMasterClass.service.StudentGfgDetailService;
-import com.husseinabdallah.SpringBootMasterClass.service.StudentGfgService;
-import lombok.RequiredArgsConstructor;
+import com.husseinabdallah.SpringBootMasterClass.model.ApiResponse;
+import com.husseinabdallah.SpringBootMasterClass.service.interfaces.StudentGfgDetailService;
+import com.husseinabdallah.SpringBootMasterClass.service.interfaces.StudentGfgService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -39,7 +40,7 @@ public class StudentGfgController {
     }
 
     @GetMapping(path = "/getStudentGfg", produces = "application/json")
-    public Optional<StudentGfg> getStudentGfg(@RequestParam(name = "id") Long id) {
+    public ResponseEntity<ApiResponse<StudentGfg>>  getStudentGfg(@RequestParam(name = "id") Long id) {
         System.out.println(id);
         return studentGfgService.getStudentGfg(id);
     }

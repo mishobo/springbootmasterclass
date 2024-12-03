@@ -1,11 +1,8 @@
 package com.husseinabdallah.SpringBootMasterClass.controller;
 
 import com.husseinabdallah.SpringBootMasterClass.entity.Customer;
-import com.husseinabdallah.SpringBootMasterClass.exception.CustomerAlreadyExistsException;
-import com.husseinabdallah.SpringBootMasterClass.exception.ErrorResponse;
 import com.husseinabdallah.SpringBootMasterClass.model.CustomerDto;
-import com.husseinabdallah.SpringBootMasterClass.service.CustomerService;
-import org.springframework.http.HttpStatus;
+import com.husseinabdallah.SpringBootMasterClass.service.interfaces.CustomerService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

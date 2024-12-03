@@ -1,7 +1,7 @@
 package com.husseinabdallah.SpringBootMasterClass.service.serviceImpl;
 
 import com.husseinabdallah.SpringBootMasterClass.model.Book;
-import com.husseinabdallah.SpringBootMasterClass.service.BookService;
+import com.husseinabdallah.SpringBootMasterClass.service.interfaces.BookService;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;

@@ -1,6 +1,6 @@
 package com.husseinabdallah.SpringBootMasterClass;
 
-import com.husseinabdallah.SpringBootMasterClass.leetCode.TwoSum;
+import com.husseinabdallah.SpringBootMasterClass.leetCode.sumoftwo.TwoSum;
 import com.husseinabdallah.SpringBootMasterClass.model.Person;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

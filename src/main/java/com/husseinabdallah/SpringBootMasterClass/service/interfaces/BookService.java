@@ -1,4 +1,4 @@
-package com.husseinabdallah.SpringBootMasterClass.service;
+package com.husseinabdallah.SpringBootMasterClass.service.interfaces;
 
 import com.husseinabdallah.SpringBootMasterClass.model.Book;
 
@@ -10,5 +10,6 @@ public interface BookService {
     Book findBookByID(long id);
     void addBook(Book b);
     void deleteAllData();
+
 
 }

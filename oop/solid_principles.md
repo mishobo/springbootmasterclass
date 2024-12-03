@@ -149,8 +149,9 @@ we can ensure that implementing classes only need to be concerned about the meth
 
 ### Dependency Injection
 
-_that larger interfaces should be split into smaller ones. By doing so, 
-we can ensure that implementing classes only need to be concerned about the methods that are of interest to them._
+- Dependency injection (DI) is a process where the objects define their dependencies i.e., the other objects they work with.
+- It happens only through constructor arguments, arguments to a factory method, or properties that are set on the object instance
+  after it is constructed or returned from a factory method.
 
 ```java
 public class Windows98Machine {

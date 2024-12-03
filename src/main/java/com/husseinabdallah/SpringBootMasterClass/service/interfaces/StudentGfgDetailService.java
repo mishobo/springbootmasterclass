@@ -1,4 +1,4 @@
-package com.husseinabdallah.SpringBootMasterClass.service;
+package com.husseinabdallah.SpringBootMasterClass.service.interfaces;
 
 import com.husseinabdallah.SpringBootMasterClass.entity.StudentGfgDetail;
 

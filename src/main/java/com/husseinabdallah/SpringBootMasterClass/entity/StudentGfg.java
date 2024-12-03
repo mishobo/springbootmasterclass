@@ -12,7 +12,7 @@ public class StudentGfg {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long id;
+    private Long studentId;
 
     @Column(name = "first_name")
     @NotBlank
@@ -27,7 +27,7 @@ public class StudentGfg {
     @NotBlank
     private String email;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "student_gfg_detail_id")
     private StudentGfgDetail studentGfgDetail;
 

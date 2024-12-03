@@ -5,11 +5,8 @@ import com.husseinabdallah.SpringBootMasterClass.exception.CustomerAlreadyExists
 import com.husseinabdallah.SpringBootMasterClass.exception.NoSuchCustomerExistsException;
 import com.husseinabdallah.SpringBootMasterClass.model.CustomerDto;
 import com.husseinabdallah.SpringBootMasterClass.repository.CustomerRepository;
-import com.husseinabdallah.SpringBootMasterClass.service.CustomerService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.husseinabdallah.SpringBootMasterClass.service.interfaces.CustomerService;
 import org.springframework.stereotype.Service;
-
-import java.util.NoSuchElementException;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
