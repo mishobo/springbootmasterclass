@@ -13,7 +13,7 @@ public class Employee {
     private String empName;
 
     // Many employees has one company address
-    @ManyToOne(cascade = CascadeType.MERGE)
+    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinColumn(name = "address_id")
     private Address address;
 

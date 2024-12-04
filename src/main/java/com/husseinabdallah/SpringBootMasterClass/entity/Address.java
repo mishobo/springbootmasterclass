@@ -9,7 +9,6 @@ import java.util.List;
 
 @Data
 @Entity
-@NoArgsConstructor
 public class Address {
 
     @Id
@@ -17,9 +16,10 @@ public class Address {
     private int addressId;
     private String location;
 
-    @OneToMany(cascade = CascadeType.ALL,
-             fetch = FetchType.EAGER)
-    private List<Employee> employee  = new ArrayList<>();;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Employee> employee  = new ArrayList<>();
+
+    public Address() {}
 
     public Address(int addressId, String location) {
         this.addressId = addressId;

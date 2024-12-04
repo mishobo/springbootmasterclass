@@ -15,3 +15,40 @@ In database management systems one-to-one mapping is of two types-
 
 ### 1. One-to-one unidirectional
 
+
+### Eager/Lazy Loading
+#### LAZY:
+- This is the default FetchType in Hibernate. 
+  It means that the associated entity will be fetched only when it is accessed for the first time. 
+  This can improve performance in cases where the associated entity is not required most of the time.
+
+- This can be more efficient than eagerly fetching the entity, 
+  especially if the entity has a lot of data and is not needed for every use of the parent entity.
+
+- It’s important to note that using FetchType.
+  LAZY can result in additional database queries being issued when the associated entity is accessed, 
+  so it may not always be the most efficient option. 
+  It’s a good idea to profile your application to determine the best fetch strategy for your use case.
+
+### EAGER:
+- This FetchType means that the associated entity will be fetched together with the main entity when the main 
+   entity is fetched from the database. This can be useful in cases where the associated entity is always required, 
+   but can also result in a performance decrease if the associated entity is large and/or has many associations itself.
+- The FetchType.EAGER option indicates that the associated entity should be fetched eagerly, 
+   which means that it will be fetched at the same time as the parent entity.
+- Using FetchType.EAGER can be more efficient than using FetchType.LAZY if the associated entity is needed for most uses 
+  of the parent entity, as it avoids the need for additional database queries to fetch the associated entity when it is accessed. 
+  However, it can also be less efficient if the associated entity has a lot of data and is not needed for every use of 
+  the parent entity, as it will always be fetched along with the parent entity. It’s a good idea to profile your 
+  application to determine the best fetch strategy for your use case.
+
+### Pagination
+Pagination is the process of dividing a large set of data into smaller, 
+more manageable chunks or pages for easier navigation and faster loading times.
+
+It is a common technique used in web applications to display a large amount of data to users, 
+while also providing them with a way to navigate through the data in a controlled and efficient manner. 
+
+Pagination typically involves dividing the data into fixed-size “chunks” or “pages,” 
+and then displaying only one page at a time. Users can then navigate through the pages using links, buttons, 
+or other controls, to view additional data.

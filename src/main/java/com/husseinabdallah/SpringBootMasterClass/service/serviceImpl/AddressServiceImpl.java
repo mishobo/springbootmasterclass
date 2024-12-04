@@ -36,7 +36,7 @@ public class AddressServiceImpl implements AddressService {
 
             ApiResponse<Address> response = new ApiResponse<>(
                     "successful",
-                    "data feteched successfully",
+                    "data fetched successfully",
                     address,
                     null
             );
