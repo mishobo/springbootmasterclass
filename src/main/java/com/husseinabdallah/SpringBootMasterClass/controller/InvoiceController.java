@@ -5,10 +5,7 @@ import com.husseinabdallah.SpringBootMasterClass.model.ApiResponse;
 import com.husseinabdallah.SpringBootMasterClass.service.interfaces.InvoiceService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path = "/api/v1/invoice")
@@ -23,6 +20,12 @@ public class InvoiceController {
     @PostMapping(value = "/create-invoice", consumes = "application/json", produces = "application/json")
     public ResponseEntity<ApiResponse<Invoice>> createInvoice(@RequestBody @Valid Invoice invoice) {
         return invoiceService.createInvoice(invoice);
+    }
+
+
+    @GetMapping(value = "/get-invoice", produces = "application/json")
+    public ResponseEntity<ApiResponse<Invoice>> getInvoice(@RequestParam Long invoiceId) {
+        return invoiceService.getInvoice(invoiceId);
     }
 
 }

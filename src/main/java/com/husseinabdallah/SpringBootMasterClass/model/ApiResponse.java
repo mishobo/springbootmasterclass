@@ -1,8 +1,8 @@
 package com.husseinabdallah.SpringBootMasterClass.model;
 
 public record ApiResponse<T> (
-        String status,
+        Boolean status,
         String message,
         T data,
-        Object object
+        Object metadata
         ){}

@@ -2,6 +2,8 @@ package com.husseinabdallah.SpringBootMasterClass.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jdk.jfr.Timestamp;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -15,9 +17,12 @@ public class Visit {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long visitId;
     private String benefitName;
+    private int benefitId;
     private String providerName;
+    private String providerId;
     private String patientName;
     private String memberNumber;
+    @Timestamp
     private LocalDateTime visitDate = LocalDateTime.now();
 
     @OneToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER, mappedBy = "visit")

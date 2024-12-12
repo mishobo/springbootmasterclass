@@ -23,7 +23,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         var savedEmployee = employeeRepo.save(employee);
         ApiResponse<Employee> response= new
                 ApiResponse<>(
-                        "successful",
+                true,
                 "data saved successfully",
                 savedEmployee,
                 null
@@ -35,7 +35,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     public ResponseEntity<ApiResponse<Employee>> fetchEmployee(int empId) {
         var employee = employeeRepo.findByEmpId(empId);
         ApiResponse<Employee> response = new ApiResponse<>(
-                "successful",
+                true,
                 "data fetched successfully",
                 employee,
                 null

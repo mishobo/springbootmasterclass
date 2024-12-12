@@ -21,9 +21,23 @@ public class InvoiceServiceImplementation implements InvoiceService {
         var savedInvoice = invoiceRepo.save(invoice);
 
         ApiResponse<Invoice> response = new ApiResponse<>(
-                "success",
+                true,
                 "data saved successfully",
                 savedInvoice,
+                null
+        );
+
+        return ResponseEntity.ok(response);
+    }
+
+    @Override
+    public ResponseEntity<ApiResponse<Invoice>> getInvoice(Long invoiceId) {
+        var invoice = invoiceRepo.findById(invoiceId).orElse(null);
+
+        ApiResponse<Invoice> response = new ApiResponse<>(
+                true,
+                "data fetched successfully",
+                invoice,
                 null
         );
 

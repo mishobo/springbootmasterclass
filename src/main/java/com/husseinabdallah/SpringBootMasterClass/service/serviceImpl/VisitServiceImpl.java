@@ -4,6 +4,7 @@ import com.husseinabdallah.SpringBootMasterClass.entity.Visit;
 import com.husseinabdallah.SpringBootMasterClass.model.ApiResponse;
 import com.husseinabdallah.SpringBootMasterClass.repository.VisitRepo;
 import com.husseinabdallah.SpringBootMasterClass.service.interfaces.VisitService;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +23,7 @@ public class VisitServiceImpl implements VisitService {
         var saveVisit = visitRepo.save(visit);
 
         ApiResponse<Visit> response = new ApiResponse<>(
-                "success",
+                true,
                 "data saved successfully",
                 saveVisit,
                 null
@@ -34,12 +35,13 @@ public class VisitServiceImpl implements VisitService {
     @Override
     public ResponseEntity<ApiResponse<Visit>> getVisit(Long visitId) {
         var existingVisit = visitRepo.findByVisitId(visitId);
+        var page = PageRequest.of(0, 1);
 
         ApiResponse<Visit> response = new ApiResponse<>(
-                "success",
+                true,
                 "data fetched successfully",
                 existingVisit,
-                null
+                page
         );
         return ResponseEntity.ok(response);
     }

@@ -28,7 +28,7 @@ public class StudentGfgServiceImpl implements StudentGfgService {
     public ResponseEntity<ApiResponse<StudentGfg>> getStudentGfg(Long id) {
         var studentGfg = studentGfgRepository.findByStudentId(id);
         ApiResponse<StudentGfg> response = new ApiResponse<>(
-                "successful",
+                true,
                 "data fetched successfully",
                 studentGfg,
                 null);

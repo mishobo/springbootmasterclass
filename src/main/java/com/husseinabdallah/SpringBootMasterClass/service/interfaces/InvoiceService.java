@@ -8,4 +8,6 @@ public interface InvoiceService {
 
     ResponseEntity<ApiResponse<Invoice>> createInvoice(Invoice invoice);
 
+    ResponseEntity<ApiResponse<Invoice>> getInvoice(Long invoiceId);
+
 }

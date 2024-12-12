@@ -1,5 +1,6 @@
 package com.husseinabdallah.SpringBootMasterClass.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -14,8 +15,9 @@ public class Model {
     private String name;
     // A model belongs to one manufacturer
     // Foreign key referencing the manufacturer table
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "manufacture_id")
+    @JsonBackReference
     private Manufacturer manufacturer;
 
     public Model() {}

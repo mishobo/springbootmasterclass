@@ -21,7 +21,7 @@ public class ModelServiceImpl implements ModelService {
         var savedModel = modelRepo.save(model);
 
         ApiResponse<Model> response = new ApiResponse<>(
-                "success",
+                true,
                 "data saved Successfully",
                 savedModel,
                 null
@@ -35,7 +35,7 @@ public class ModelServiceImpl implements ModelService {
         var model = modelRepo.findByModelId(modelId);
 
         ApiResponse<Model> response = new ApiResponse<>(
-                "success",
+                true,
                 "data fetched successfully",
                 model,
                 null

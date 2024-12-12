@@ -21,7 +21,7 @@ public class ManufacturerServiceImpl implements ManufacturerService {
         var manufacturer = manufacturerRepo.save(manufactures);
 
         ApiResponse<Manufacturer> response = new ApiResponse<>(
-                "success",
+                true,
                 "data save successfully",
                 manufacturer,
                 null
@@ -35,7 +35,7 @@ public class ManufacturerServiceImpl implements ManufacturerService {
         var manufacturer = manufacturerRepo.findById(id).orElse(null);
 
         ApiResponse<Manufacturer> response = new ApiResponse<>(
-                "success",
+                true,
                 "data fetched successfully",
                 manufacturer,
                 null

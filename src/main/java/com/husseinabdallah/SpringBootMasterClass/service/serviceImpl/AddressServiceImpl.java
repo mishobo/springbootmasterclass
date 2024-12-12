@@ -21,7 +21,7 @@ public class AddressServiceImpl implements AddressService {
     public ResponseEntity<ApiResponse<Address>> addAddress(Address address) {
         var addressId = addressRepo.save(address);
         ApiResponse<Address> response = new ApiResponse<>(
-                "successful",
+                true,
                 "data saved successfully",
                 addressId,
                 null
@@ -35,7 +35,7 @@ public class AddressServiceImpl implements AddressService {
         var address = addressRepo.findByAddressId(addressId);
 
             ApiResponse<Address> response = new ApiResponse<>(
-                    "successful",
+                    true,
                     "data fetched successfully",
                     address,
                     null

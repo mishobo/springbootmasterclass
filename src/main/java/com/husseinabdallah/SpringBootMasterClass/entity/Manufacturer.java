@@ -1,5 +1,6 @@
 package com.husseinabdallah.SpringBootMasterClass.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -17,7 +18,8 @@ public class Manufacturer {
     private String manufacturesName;
 
     // A manufacturer can have many models
-    @OneToMany(mappedBy = "manufacturer", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "manufacturer", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonManagedReference
     private List<Model> models;
 
 
