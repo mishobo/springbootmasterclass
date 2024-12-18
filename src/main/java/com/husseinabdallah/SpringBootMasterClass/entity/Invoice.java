@@ -23,12 +23,12 @@ public class Invoice {
     @Timestamp
     private LocalDateTime invoiceDate = LocalDateTime.now();
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "visit_id")
     @JsonBackReference
     private Visit visit;
 
-    @OneToMany(mappedBy = "invoice", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "invoice", cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<ServiceItem> serviceItems;
 

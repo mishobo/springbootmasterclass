@@ -19,7 +19,8 @@ public class ServiceItem {
     private String serviceType;
     private int quantity;
     private int serviceCost;
-    @ManyToOne
+
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "invoice_id")
     @JsonBackReference
     private Invoice invoice;

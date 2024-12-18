@@ -52,3 +52,45 @@ while also providing them with a way to navigate through the data in a controlle
 Pagination typically involves dividing the data into fixed-size “chunks” or “pages,” 
 and then displaying only one page at a time. Users can then navigate through the pages using links, buttons, 
 or other controls, to view additional data.
+
+### Cascading
+When we perform some action on the target entity, the same action will be applied to the associated entity.
+
+### 2.1. JPA Cascade Type
+All JPA-specific cascade operations are represented by the jakarta.persistence.CascadeType enum containing entries:
+- ALL
+- PERSIST
+- MERGE
+- REMOVE
+- REFRESH
+- DETACH
+
+### CascadeType.ALL
+CascadeType.ALL propagates all operations — including Hibernate-specific ones — from a parent to a child entity.
+
+```java
+@Entity
+public class Person {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+    private String name;
+    @OneToMany(mappedBy = "person", cascade = CascadeType.ALL)
+    private List<Address> addresses;
+}
+```
+
+```java
+@Entity
+public class Address {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+    private String street;
+    private int houseNumber;
+    private String city;
+    private int zipCode;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Person person;
+}
+```

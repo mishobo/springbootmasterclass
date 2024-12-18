@@ -25,7 +25,7 @@ public class Visit {
     @Timestamp
     private LocalDateTime visitDate = LocalDateTime.now();
 
-    @OneToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER, mappedBy = "visit")
+    @OneToMany(cascade = CascadeType.MERGE, mappedBy = "visit")
     @JsonManagedReference
     private List<Invoice> invoices;
 
