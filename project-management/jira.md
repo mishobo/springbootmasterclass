@@ -17,4 +17,20 @@
 ✔ Share progress with their team
 
 ### scrum vs kanban
-Kanban and Scrum are both project management frameworks that help teams organize and manage work.
+- Kanban and Scrum are both project management frameworks that help teams organize and manage work.
+- They both share many principles, such as: 
+* Responding to change, Working software over documentation, and Continuous delivery of working software.
+
+However, they differ in their practices, including:
+### Visualization
+- Kanban uses visual tasks to manage workflows, while Scrum focuses on processes.
+### Delivery
+- Kanban delivers tasks continuously, while Scrum delivers chunks of work in sprints.
+### Flexibility
+- Kanban is more flexible, while Scrum is more prescriptive.
+### Teamwork
+- Scrum assigns each team member a unique task, while Kanban doesn't have expressly unique roles.
+### Board management
+- Scrum boards are reset after each sprint, while Kanban boards don't reset after chunks of work are completed.
+### Suitability
+- Kanban is better for improving production processes, while Scrum is better for producing work faster.
