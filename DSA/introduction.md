@@ -1,5 +1,13 @@
 # Algorithms
 
+Data Structures and Algorithms (DSA) is a fundamental part of Computer Science that teaches you how to think 
+and solve complex problems systematically.
+
+Using the right data structure and algorithm makes your program run faster, especially when working with lots of data.
+
+The word 'algorithm' comes from 'al-Khwarizmi', named after a Persian scholar who lived around year 800.
+
+
 Definition:
 Algorithm is a procedure, a sequence of finite steps to solve a particular problem.
 The Algorithm designed are language-independent, i.e. they are just plain instructions that can be implemented in any 

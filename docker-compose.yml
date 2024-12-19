@@ -1,0 +1,33 @@
+networks:
+  localprom:
+    driver: bridge
+
+services:
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus
+    volumes:
+      - "./prometheus.yml:/etc/prometheus/prometheus.yml"
+    networks:
+      - localprom
+    ports:
+      - "9090:9090"
+
+
+  node-exporter:
+    container_name: node-expoter
+    image: prom/node-exporter
+    networks:
+      - localprom
+    ports:
+      - "9100:9100"
+    depends_on:
+      - prometheus
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana
+    networks:
+      - localprom
+    ports:
+      - "3000:3000"
