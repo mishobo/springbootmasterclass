@@ -61,5 +61,15 @@ DSA is fundamental in nearly every part of the software world:
 | Divide and Conquer | A method of solving complex problems by breaking them into smaller, more manageable sub-problems, solving the sub-problems, and combining the solutions. <br/>Recursion is often used when using this method in an algorithm. |
 | Brute Force        | A simple and straight forward way an algorithm can work by simply trying all possible solutions and then choosing the best one.                                                                                               |
 
+### Arrays
+An array is a data structure used to store multiple elements.
+Arrays are used by many algorithms.
+Arrays are indexed, meaning that each element in the array has an index, a number that says where in the array the element is located.
+Python, Java, and C use zero-based indexing for arrays, meaning that the first element in an array can be accessed at index 0.
+
+### Implementation
+Before implementing the algorithm using an actual programming language, it is usually smart to first write the algorithm as a step-by-step procedure.
+Pseudocode is a description of what a program does, using language that is something between human language and a programming language.
+
 
 

@@ -24,10 +24,8 @@ public class Fibonacci {
     public static void fibonacciIterative(int n) {
         int first = 0;
         int second = 1;
-
         System.out.println(first);
         System.out.println(second);
-
         for(int fibo = 0; fibo < (n - 2); fibo++) {
             int nextValue = first + second;
             System.out.println(nextValue);
@@ -42,7 +40,6 @@ public class Fibonacci {
      static int count = 2;
 
     public static void fibonacciRecursive(int first, int second) {
-
         if(count <= 19) {
             int nextValue = first + second;
             System.out.println(nextValue);
@@ -51,15 +48,39 @@ public class Fibonacci {
             count+=1;
             fibonacciRecursive(first, second);
         }
+    }
 
+    // 3. Finding The nth Fibonacci Number Using Recursion
+    // To find the nth Fibonacci number we can write code based on the mathematics formula for Fibonacci number n:
+    // F(n)=F(n−1)+F(n−2)
+    // This just means that for example the 10th Fibonacci number is the sum of the 9th and 8th Fibonacci numbers.
+    // This formula uses a 0-based index. This means that to generate the 20th Fibonacci number, we must writeF(19).
+    // When using this concept with recursion, we can let the function call itself as long as n is less than, or equal to, 1.
+
+
+    public static int nThFibonacciValue(int n) {
+        if(n <= 1){
+            return n;
+        } else {
+            return (nThFibonacciValue(n-2) + nThFibonacciValue(n-1));
+        }
+
+    }
+
+    public static int sumOfFibonacci(int n) {
+        return 0;
     }
 
 
     public static void main(String[] args) {
         //fibonacciIterative(20);
-        System.out.println(0);
-        System.out.println(1);
-        fibonacciRecursive(0, 1);
+//        System.out.println(0);
+//        System.out.println(1);
+//        fibonacciRecursive(0, 1);
+
+        System.out.println(nThFibonacciValue(19));
+
+
     }
 
 }
