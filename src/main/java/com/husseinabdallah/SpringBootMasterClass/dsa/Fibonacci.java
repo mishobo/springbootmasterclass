@@ -1,9 +1,9 @@
 package com.husseinabdallah.SpringBootMasterClass.dsa;
 
 public class Fibonacci {
-//    algorithm
-//    The two first Fibonacci numbers are 0 and 1, and the next Fibonacci number is always the sum of the two previous numbers,
-//    so we get 0, 1, 1, 2, 3, 5, 8, 13, 21, ..
+    // algorithm
+    // The two first Fibonacci numbers are 0 and 1, and the next Fibonacci number is always the sum of the two previous numbers,
+    // so we get 0, 1, 1, 2, 3, 5, 8, 13, 21, ..
     // Below is the algorithm to create the 20 first Fibonacci numbers.
     // How it works:
     // Start with the two first Fibonacci numbers 0 and 1.
@@ -20,12 +20,7 @@ public class Fibonacci {
     // Print the new Fibonacci number
     // Update the variables that hold the previous two fibonacci numbers
 
-    public static void main(String[] args) {
-        fibonacciIterative(20);
-    }
-
-
-    // first solution using a loop
+    //1. first solution using a loop
     public static void fibonacciIterative(int n) {
         int first = 0;
         int second = 1;
@@ -39,6 +34,32 @@ public class Fibonacci {
             first = second;
             second = nextValue;
         }
+    }
+
+    //2. implementation using recursion.
+    //  recursion is when a function calls itself.
+
+     static int count = 2;
+
+    public static void fibonacciRecursive(int first, int second) {
+
+        if(count <= 19) {
+            int nextValue = first + second;
+            System.out.println(nextValue);
+            first = second;
+            second = nextValue;
+            count+=1;
+            fibonacciRecursive(first, second);
+        }
+
+    }
+
+
+    public static void main(String[] args) {
+        //fibonacciIterative(20);
+        System.out.println(0);
+        System.out.println(1);
+        fibonacciRecursive(0, 1);
     }
 
 }
