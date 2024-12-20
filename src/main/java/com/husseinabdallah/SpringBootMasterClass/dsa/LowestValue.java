@@ -35,7 +35,9 @@ public class LowestValue {
     }
 
     public static void main(String[] args) {
-        lowestValue(new int[]{7, 12, 9, 4, 5, 11});
+
+        lowestValue(new int[]{7, 12, 9, 4, 5, 11}
+        );
     }
 
 
